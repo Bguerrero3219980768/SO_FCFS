@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FCFS - First-Come, First-Served</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <nav>
+    <img src="img/sello.png" alt="Logo" width="400" height="150">
+  </nav>
+
+  <div class="container">
+    <h1 class="mt-2">FCFS - First-Come, First-Served</h1>
+
+    <div class="form-group">
+      <label for="numTasks">Number of tasks:</label>
+      <input type="number" id="numTasks" class="form-control">
+    </div>
+
+    <div id="taskInputs"></div>
+
+    <button onclick="runFCFS()" class="btn btn-primary">Ejecutar FCFS</button>
+
+    <table id="results" class="table mt-2">
+      <thead class="thead-dark">
+        <tr>
+          <th>task</th>
+          <th>Time of arrival</th>
+          <th>Duration</th>
+          <th>Wait time</th>
+          <th>return time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <footer class="mt-2">
+      <p>Brayan Guerrero 1152272</p>
+      <p>Julieth Martinez 1151802</p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
