@@ -37,6 +37,9 @@ function runFCFS() {
   const tableBody = document.querySelector('#results tbody');
   tableBody.innerHTML = '';
 
+  const ganttChartBody = document.querySelector('#ganttChart tbody');
+  ganttChartBody.innerHTML = '';
+
   let currentTime = 0;
   let totalWaitTime = 0;
   let totalTurnaroundTime = 0;
@@ -61,6 +64,18 @@ function runFCFS() {
 
     tableBody.appendChild(row);
 
+    // Crear una fila en el gráfico de Gantt para mostrar el proceso de planificación
+    const ganttRow = document.createElement('tr');
+    ganttRow.innerHTML = `
+        <td>${task.name}</td>
+      `;
+
+    // Establecer el color de fondo de la celda del gráfico de Gantt
+    const color = getRandomColor();
+    ganttRow.style.backgroundColor = color;
+
+    ganttChartBody.appendChild(ganttRow);
+
     currentTime += task.duration;
   }
 
@@ -78,4 +93,15 @@ function runFCFS() {
 
   tableBody.appendChild(avgRow);
 }
+
+// Función auxiliar para generar colores aleatorios en formato hexadecimal
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 
